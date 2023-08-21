@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.checkboxselection.R
 import com.example.checkboxselection.databinding.AppItemBinding
 import com.example.checkboxselection.databinding.FragmentAppsBinding
 import com.example.checkboxselection.ui.adapter.AppsAdapter
@@ -23,6 +25,10 @@ class AppsFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentAppsBinding.inflate(inflater, container, false)
+
+        binding.btnDone.setOnClickListener {
+            findNavController().navigate(R.id.action_appsFragment_to_homeFragment)
+        }
 
         bindViews()
 
